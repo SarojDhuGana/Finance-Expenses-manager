@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import authBg from "../assets/img/auth_bg.jpg";
 import icon from "../assets/img/icon.png";
+import Signup from "./Signup";
 
 export default function Login() {
   // const [user, setUser] = useState({
@@ -21,7 +22,7 @@ export default function Login() {
             }}
           >
             <div className="w-full h-screen bg-black opacity-50 flex justify-center">
-              <div className="border-2 border-blue-300 w-4/12 h-8/12 mt-25 bg-gray-800 px-4 py-4 rounded-xl flex flex-col text-white">
+              <div className="border-2 border-blue-300 w-4/12  mt-5 bg-gray-800 px-4 py-4 rounded-xl flex flex-col text-white">
                 <div className="flex items-center flex-col">
                   <img src={`${icon}`} alt="img" className="h-30" />
                 </div>
@@ -48,13 +49,34 @@ export default function Login() {
                     className="p-2 w-sm text-[18px] rounded-sm border-2 border-blue-200 outline-none"
                   />
                   <br />
-                  <div className="flex justify-center ">
-                    <button
-                      type="submit"
-                      className="mt-4 px-2 py-2 w-50 bg-[#3B82F6] rounded-xl text-[18px] font-medium hover:bg-white hover:text-[#0D9488]"
-                    >
-                      Login
-                    </button>
+                  <div>
+                    <div className="flex">
+                      {" "}
+                      <p className="mt-5 mr-5 text-[18px] font-medium">
+                        Don't have accout?{" "}
+                        <a
+                          href={`{Signup}`}
+                          className="underline text-blue-300"
+                        >
+                          {" "}
+                          Signup
+                        </a>
+                      </p>
+                      <a
+                        href=""
+                        className="mt-5 ml-10 text-[18px] font-medium text-blue-300 underline"
+                      >
+                        forget ?
+                      </a>
+                    </div>
+                    <div className="flex justify-center ">
+                      <button
+                        type="submit"
+                        className="mt-4 px-2 py-2 w-30 bg-[#3B82F6] rounded-xl text-[18px] font-medium hover:bg-white hover:text-[#0D9488]"
+                      >
+                        Login
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>{" "}
