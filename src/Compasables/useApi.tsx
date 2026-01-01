@@ -3,7 +3,7 @@ import { UserSession } from "../store/UserSession";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  withCredentials: true, // safe even if not using cookies yet
+  withCredentials: true,
 });
 
 api.interceptors.request.use(
@@ -23,11 +23,9 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
       UserSession.logout();
       window.location.href = "/login";
     }
-
     return Promise.reject(error);
   }
 );

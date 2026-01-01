@@ -2,6 +2,7 @@ import authBg from "../assets/img/bg.jpg";
 import icon from "../assets/img/icon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -29,12 +30,28 @@ export default function Signup() {
         }}
       >
         <div className="w-full min-h-screen flex justify-center lg:justify-start items-center px-4">
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+              scale: 0.5,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              mass: 1,
+            }}
             className="
-              border border-blue-200 bg-transparent text-white
+              border bg-transparent text-white  shadow-orange-300 border-orange-300   shadow-lg/30
               w-full sm:w-10/12 md:w-7/12 lg:w-4/12
-              lg:ml-28
-              px-4 py-4 rounded-xl flex flex-col
+              lg:ml-28 md:ml-20
+              px-6 py-6 rounded-xl
             "
           >
             <div className="flex items-center flex-col mb-2">
@@ -74,8 +91,8 @@ export default function Signup() {
               />
 
               <p className="mt-2 text-sm sm:text-base">
-                Already have your account in Finance Manager?
-                <Link to="/login" className="underline text-blue-300 ml-2">
+                Already have your account?
+                <Link to="/login" className="underline text-orange-400 ml-2">
                   Login
                 </Link>
               </p>
@@ -101,7 +118,7 @@ export default function Signup() {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

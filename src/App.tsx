@@ -2,7 +2,7 @@ import "./App.css";
 import Login from "./Authentacation/Login";
 import Signup from "./Authentacation/Signup";
 import Forget from "./Authentacation/Forget";
-// import Dashboard from "./Components/Home/dashboard";
+import Dashboard from "./Components/Home/dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -14,11 +14,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/forgot" element={<Forget />}></Route>
-
-          {/* protected route
+          {/* protected route */}
           <Route path="/" element={<Dashboard />}>
             Dashboard
-          </Route> */}
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
